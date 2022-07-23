@@ -1,5 +1,5 @@
 <?php
-    class KhoahocModel extends DB{
+    class home extends DB{
         public function getKH(){
         }
         public function getKH2(){
