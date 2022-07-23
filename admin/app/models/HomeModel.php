@@ -1,5 +1,5 @@
 <?php
-    class home extends DB{
+    class HomeModel extends DB{
         public function getKH(){
         }
         public function getKH2(){
