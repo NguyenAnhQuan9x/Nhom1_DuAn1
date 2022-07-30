@@ -5,7 +5,7 @@ $lop = $data['lop']->getLop($id);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tenlop = $_POST['lop'];
     $data['lop']->EditLop($tenlop,$id);
-    header('location:/DUAN1_NHOM1_QTT/admin/Lop_hoc/List');
+    echo("<script>location.href = '/DUAN1_NHOM1_QTT/admin/Lop_hoc/List';</script>");
 }
 ?>
 <p class="class-title">Lớp học</p>

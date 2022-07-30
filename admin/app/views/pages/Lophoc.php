@@ -3,7 +3,7 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tenlop = $_POST['lop'];
     $data['lop']->addLop($tenlop);
-    header('location:/DUAN1_NHOM1_QTT/admin/Lop_hoc/List');
+    echo("<script>location.href = '/DUAN1_NHOM1_QTT/admin/Lop_hoc/List';</script>");
 }
 ?>
 <p class="class-title">Lớp học</p>
