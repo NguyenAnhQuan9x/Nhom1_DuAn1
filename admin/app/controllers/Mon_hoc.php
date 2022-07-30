@@ -1,13 +1,40 @@
 <?php
-class Mon_hoc extends BaseController{
-    public function Show(){
-        //model
-        $show = $this->model('LopModel');
-        $show->getLop();
+class Mon_hoc extends BaseController
+{
+    private $monhoc;
+    public function __construct()
+    {
+        $this->monhoc = $this->model('MonModel');
+    }
+    public function Show()
+    {
         //view
-        $this->view("master1",[
-            'page'=>'Monhoc'
+        $this->view('master1', [
+            'page' => 'Monhoc',
+            'mon' =>$this->monhoc
         ]);
-
+    }
+    public function List()
+    {
+        //view
+        $this->view('master1', [
+            'page' => 'DsMon',
+            'mon'=>$this->monhoc
+        ]);
+    }
+    public function Delete($id){
+        //model
+        $this->monhoc->DeleteMon($id);
+        echo("<script>location.href = '/DUAN1_NHOM1_QTT/admin/Mon_hoc/List';</script>");
+        
+    }
+    public function Edit($id){
+        //view 
+        $this->view('master1', [
+            'page' => 'EditMon',
+            'mon'=>$this->monhoc,
+            'id'=>$id
+        ]);
+        //model
     }
 }

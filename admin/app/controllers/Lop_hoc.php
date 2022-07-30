@@ -26,7 +26,7 @@ class Lop_hoc extends BaseController
     public function Delete($id){
         //model
         $this->lophoc->DeleteLop($id);
-        header('location:/DUAN1_NHOM1_QTT/admin/Khoahoc/List');
+        echo("<script>location.href = '/DUAN1_NHOM1_QTT/admin/Lop_hoc/List';</script>");
         
     }
     public function Edit($id){
