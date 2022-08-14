@@ -10,7 +10,11 @@
             return $this->pdo_query($sql);
         }
         public function getkh($id){
+<<<<<<< HEAD
             $sql = "SELECT kh.id_khoahoc,kh.ten_khoahoc,kh.mo_ta,kh.anh_khoahoc,kh.so_luot_xem,kh.id_lop,kh.id_mon, lh.ten_lop,mh.ten_mon, COUNT(dg.id_danhgia) soluongdg,AVG(dg.so_sao) danhgiatb FROM khoa_hoc kh JOIN lop lh JOIN mon_hoc mh JOIN danh_gia dg ON kh.id_khoahoc = dg.id_khoahoc AND kh.id_lop = lh.id_lop AND kh.id_mon = mh.id_mon WHERE kh.id_khoahoc = $id";
+=======
+            $sql = "SELECT * FROM khoa_hoc WHERE id_khoahoc = $id";
+>>>>>>> main
             return $this->pdo_query_one($sql);
         }
         //Lấy số lượng khóa học trong khoảng
@@ -19,6 +23,7 @@
             kh.id_lop = lp.id_lop AND kh.id_mon = mh.id_mon ORDER BY kh.id_khoahoc DESC LIMIT $form,$unit";
             return $this->pdo_query($sql);
         }
+<<<<<<< HEAD
         //Lấy số lượng khóa học theo môn và lớp
         public function getkhmonlop($idlop,$idmon){
             $sql = "SELECT * FROM khoa_hoc kh JOIN mon_hoc mh JOIN lop lp ON
@@ -37,18 +42,27 @@
             kh.id_lop = lp.id_lop AND kh.id_mon = mh.id_mon WHERE kh.ten_khoahoc LIKE '%$ten%'";
             return $this->pdo_query($sql);
         }
+=======
+>>>>>>> main
         public function Editkh($ten_kh,$mo_ta,$anh,$luotxem,$malop,$mamon,$id){
             $sql ="UPDATE khoa_hoc set ten_khoahoc ='$ten_kh',mo_ta ='$mo_ta',anh_khoahoc ='$anh',so_luot_xem=$luotxem, id_lop=$malop,id_mon=$mamon where id_khoahoc =$id";  
             $this->pdo_execute($sql);
           }
+<<<<<<< HEAD
         //Cập nhật số lượt xem
         public function UpdateView($soluotxem,$id){
             $sql ="UPDATE khoa_hoc set so_luot_xem=$soluotxem where id_khoahoc =$id";  
             $this->pdo_execute($sql);
         }
+=======
+>>>>>>> main
         public function deletekh($id){
             $sql ="DELETE FROM khoa_hoc WHERE id_khoahoc = $id";
             $this->pdo_execute($sql);
         }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> main
 
     }
